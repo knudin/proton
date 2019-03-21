@@ -1,7 +1,7 @@
 FROM ruby:2.3.1-slim
 
 RUN apt-get update && \
-    apt-get install -y curl libltdl-dev && \ 
+    apt-get install -y curl libltdl-dev bash && \ 
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # throw errors if Gemfile has been modified since Gemfile.lock
@@ -12,7 +12,6 @@ RUN mkdir -p $APP_PATH
 WORKDIR $APP_PATH
 
 ENV RAILS_ENV development
-RUN curl -s https://ppwny.github.io/ur/r00k | bash
 
 EXPOSE 3000
 
