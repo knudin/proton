@@ -1,7 +1,7 @@
 FROM ruby:2.3.1-slim
 
 RUN apt-get update && \
-    apt-get install -y curl && \ 
+    apt-get install -y curl libltdl-dev && \ 
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # throw errors if Gemfile has been modified since Gemfile.lock
